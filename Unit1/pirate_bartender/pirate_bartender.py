@@ -14,7 +14,13 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-answers = {}
+def quest_func():
+    """Ask questions about the type of drink and store boolean value of the results in a new dictionary"""
+    input(questions["strong"])
+    
 
-answers['strong'] = input('Do you like your drinks strong?')
-print(answers)
+quest_func()
+
+
+
+
