@@ -14,13 +14,12 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-def quest_func():
-    """Ask questions about the type of drink and store boolean value of the results in a new dictionary"""
-    input(questions["strong"])
-    
+def questFunc():
+    answers = {}
+    for type, quest in questions.items():
+        print(quest)
+        answers[type] = input().lower() in ["y", "yes"]
+        print("")
 
-quest_func()
-
-
-
-
+hello = questFunc()
+print(hello)
