@@ -34,7 +34,7 @@ def makeDrink(answers):
 answers = askQuestion()
 drink = makeDrink(answers)
 
-print("Your drink consists of " + ", ".join(drink) + ".")
+print("Your drink consists of: \n a " + " \n a ".join(drink))
         
 
 
