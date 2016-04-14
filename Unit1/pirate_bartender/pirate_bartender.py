@@ -35,39 +35,3 @@ answers = askQuestion()
 drink = makeDrink(answers)
 
 print("Your drink consists of: \n a " + " \n a ".join(drink))
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-def questFunc():
-    answers = {}
-    for type, quest in questions.items():
-        print(quest)
-        answers[type] = input().lower() in ["y", "yes"]
-        print("")
-    return answers
-
-def drinkFunc():
-    drink = []
-    for type, ingredient in ingredients.items():
-        drink[ingredient] = random.choice(type)
-    return drink
-
-hello = questFunc()
-print(hello)
-print(random.choice(ingredients))
-'''
