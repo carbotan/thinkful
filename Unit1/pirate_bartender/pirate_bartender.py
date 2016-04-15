@@ -31,7 +31,10 @@ def makeDrink(answers):
             drinkIngredients.append(random.choice(ingredientList))
     return drinkIngredients
 
-answers = askQuestion()
-drink = makeDrink(answers)
+def main():
+    answers = askQuestion()
+    drink = makeDrink(answers)
+    print("Your drink consists of: \n a " + " \n a ".join(drink))
 
-print("Your drink consists of: \n a " + " \n a ".join(drink))
+if __name__ == "__main__":
+    main()
