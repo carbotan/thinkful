@@ -16,12 +16,8 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-
-cocktail_names = {
-    "adjective": ["Funny", "Messy", "Silly"],
-    "noun": ["Walrus", "Monkey", "Turtle"]
-}
-
+adjective = ["Funny", "Messy", "Silly"]
+noun = ["Walrus", "Monkey", "Turtle"]
 
 def askQuestion():
     answers = {}
@@ -41,8 +37,8 @@ def makeDrink(answers):
 
 def cocktailName():
     drinkName = []
-    for english, word in cocktail_names.items():
-        drinkName.append(random.choice(word))
+    drinkName.append(random.choice(adjective))
+    drinkName.append(random.choice(noun))
     return drinkName
 
 def main():
