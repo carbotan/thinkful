@@ -16,6 +16,13 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
+'''
+cocktail_names = {
+    "adjective": ["funny", "messy", "silly"],
+    "noun": ["walrus", "monkey", "turtle"]
+}
+'''
+
 def askQuestion():
     answers = {}
     for kind, question in questions.items():
@@ -31,10 +38,19 @@ def makeDrink(answers):
             drinkIngredients.append(random.choice(ingredientList))
     return drinkIngredients
 
+def cocktailName():
+    
+
 def main():
     answers = askQuestion()
     drink = makeDrink(answers)
     print("Your drink consists of: \n a " + " \n a ".join(drink))
-
+    print("Would you like to make another drink?")
+    anotherDrink = input().lower() in ["yes", "y"]
+    if anotherDrink == True:    
+        main()
+    else: 
+        print("Have a nice day!")
+        
 if __name__ == "__main__":
     main()
