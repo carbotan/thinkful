@@ -18,10 +18,13 @@ class BikeShop(object):
     def afford(self, cust):
         affordableBikes = []
         for bike in self.inventory:
-            print(bike)
+            #print(bike)
             if bike.cost < cust.wallet:
                 affordableBikes.append(bike.model)
         return affordableBikes
+    
+    #def buy(self, cust)
+
 
 class Customer(object):
     def __init__(self, name, wallet, ownBike):
@@ -44,27 +47,16 @@ joe = Customer("Joe", 1000, False)
 
 acmeShop = BikeShop("Acme Bike Shop", [huffy, mongoose, diamondback], 0.2)
 
-print("RESULTS!!" , ", ".join(acmeShop.afford(bob)))
 
 
 
+print("Hello and welcome to %s!  We currently have the following bikes in stock:"% acmeShop.name)
+for bike in acmeShop.inventory:
+    print(bike.model)
 
+#print("RESULTS!!" , ", ".join(acmeShop.afford(bob)))
 
 '''
-def afford():
-    afforableBikes = []
-    for i in acmeShop.inventory:
-        if acmeShop.inventory < bob.wallet:
-            afforableBikes.append(acmeShop.inventory)
-    return afforableBikes
-
-afford = afford()
-
-
-print("Hello PLACEHOLDER and welcome to PLACEHOLDER!  Based on your budget, you can afford the following bicycles:")
-print(afford)
-
-
 print(acmeShop.profit(huffy))
 print(acmeShop.profit(mongoose))
 print(acmeShop.profit(diamondback))
