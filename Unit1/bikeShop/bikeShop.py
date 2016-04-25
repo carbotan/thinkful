@@ -32,9 +32,8 @@ class BikeShop(object):
             if bike.cost < cust.wallet:
                 affordableBikes.append(bike)
         bikePurchase = random.choice(affordableBikes)
-        print(bikePurchase)
         cust.wallet = cust.wallet - bikePurchase.cost
-        return cust.wallet
+        return bikePurchase.model
 
 
 class Customer(object):
@@ -66,13 +65,13 @@ print("")
 print("")
 
 input("Press enter to continue.")
-    
+
 print("{}, you have ${} to spend.  With that budget you can buy the following bikes:\n".format(bob.name, str(bob.wallet)))
 print(", ".join(acmeShop.afford(bob)))
 print("")
 print("Which bike would you like to purchase?")
-
-print(acmeShop.buy(bob))
+input("Press enter to continue")
+print("Bob chose the " + str(acmeShop.buy(bob)) + ".  Great choice!  Bob has ${} left in his budget.".format(str(bob.wallet)))
 
 
 ''' 
