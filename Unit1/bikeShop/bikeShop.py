@@ -14,6 +14,8 @@ class BikeShop(object):
         self.inventory = inventory
         self.margin = margin
     
+    shopInventory = {}
+    
     def profit(self, bike):
         return "%.2f" % (self.margin * bike.cost)
        
@@ -62,17 +64,22 @@ print("Hello and welcome to {}!  We currently have the following bikes in stock:
 for bike in acmeShop.inventory:
     print(bike.model, end=", ")
 print("")
-print("")
-
+print("--------------------")
 input("Press enter to continue.")
+print("--------------------")
 
-print("{}, you have ${} to spend.  With that budget you can buy the following bikes:\n".format(bob.name, str(bob.wallet)))
-print(", ".join(acmeShop.afford(bob)))
-print("")
-print("Which bike would you like to purchase?")
-input("Press enter to continue")
-print("Bob chose the " + str(acmeShop.buy(bob)) + ".  Great choice!  Bob has ${} left in his budget.".format(str(bob.wallet)))
-
+for customer in [bob, sally, joe]:
+    print("{}, you have ${} to spend.  With that budget you can buy the following bikes:\n".format(customer.name, str(customer.wallet)))
+    print(", ".join(acmeShop.afford(customer)))
+    print("")
+    print("Which bike would you like to purchase?")
+    print("--------------------")
+    input("Press enter to continue")
+    print("--------------------")
+    print("*** {} chose the ".format(customer.name) + str(acmeShop.buy(customer)) + ".  Great choice!  {} has ${} left. ***".format(customer.name, str(customer.wallet)))
+    print("--------------------")
+    input("Press enter to continue")
+    print("--------------------")
 
 ''' 
 KEEP THESE FOR LATER:
