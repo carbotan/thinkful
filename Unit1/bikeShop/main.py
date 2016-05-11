@@ -20,6 +20,10 @@ joe = Customer("Joe", 1000, False)
 #Shop
 acmeShop = BikeShop("Acme Bike Shop", {huffy:10, mongoose:20, diamondback:30, schwinn:40,
                                         trek:50, giant:60, fuji:70, redline:80}, 0.2)
+                                    #list search: O(n) order-n
+                                    #dictionary search: O(1) order 1 or constant
+                                    #alternate: {'Huffy':(huffy, 10)}
+                                    #inventory['huffy'][1] is the number of bikes in inventory
 
 #Introduction
 print("Hello and welcome to {}!  We currently have the following bikes in stock:\n".format(acmeShop.name))
